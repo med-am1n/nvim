@@ -1,16 +1,13 @@
 return {
-
   {
     "mason-org/mason.nvim",
-
     config = function()
       require("mason").setup()
     end,
   },
-
   {
     "mason-org/mason-lspconfig.nvim",
-
+    dependencies = { "neovim/nvim-lspconfig" },
     config = function()
       require("mason-lspconfig").setup({
         ensure_installed = {
@@ -20,29 +17,28 @@ return {
           "dockerls",
         },
       })
-    end,
-  },
 
-  {
-    "neovim/nvim-lspconfig",
+      -- New Neovim 0.11+ API: configure servers with vim.lsp.config,
+      -- then turn them on with vim.lsp.enable.
+      -- nvim-lspconfig still ships the default per-server settings,
+      -- so passing {} is enough to use its defaults.
+      vim.lsp.config("clangd", {})
+      vim.lsp.config("bashls", {})
+      vim.lsp.config("yamlls", {})
+      vim.lsp.config("dockerls", {})
 
-    config = function()
-      local lspconfig = require("lspconfig")
+      vim.lsp.enable({ "clangd", "bashls", "yamlls", "dockerls" })
 
-      lspconfig.clangd.setup({})
-      lspconfig.bashls.setup({})
-      lspconfig.yamlls.setup({})
-      lspconfig.dockerls.setup({})
-
-      vim.keymap.set("n", "gd", vim.lsp.buf.definition)
-      vim.keymap.set("n", "gr", vim.lsp.buf.references)
-      vim.keymap.set("n", "K", vim.lsp.buf.hover)
-
-      vim.keymap.set(
-        "n",
-        "<leader>f",
-        vim.lsp.buf.format
-      )
+      -- Keymaps only apply once an LSP client actually attaches to a buffer
+      vim.api.nvim_create_autocmd("LspAttach", {
+        callback = function(args)
+          local opts = { buffer = args.buf }
+          vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
+          vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
+          vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
+          vim.keymap.set("n", "<leader>f", vim.lsp.buf.format, opts)
+        end,
+      })
     end,
   },
 }
