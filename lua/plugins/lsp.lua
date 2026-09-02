@@ -15,6 +15,7 @@ return {
           "bashls",
           "yamlls",
           "dockerls",
+          "glsl_analyzer"
         },
       })
 
@@ -26,6 +27,7 @@ return {
       vim.lsp.config("bashls", {})
       vim.lsp.config("yamlls", {})
       vim.lsp.config("dockerls", {})
+      vim.lsp.config("glsl_analyzer", {})
 
       vim.lsp.enable({ "clangd", "bashls", "yamlls", "dockerls" })
 
