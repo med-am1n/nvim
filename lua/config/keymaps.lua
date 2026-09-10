@@ -41,8 +41,15 @@ keymap("n", "<leader>bd", ":bdelete<CR>", { desc = "Delete buffer" })
 -- Move selected lines up/down, re-indenting and re-selecting automatically
 keymap("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move selection down" })
 keymap("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move selection up" })
+keymap("v", "<", "<gv", { desc = "Indent left and keep selection" })
+keymap("v", ">", ">gv", { desc = "Indent right and keep selection" })
+--- Line navigation
+keymap("n", "<leader>h", "^", { desc = "Start of line" })
+keymap("n", "<leader>l", "$", { desc = "End of line" })
 
-------------------------------------------------------------------------------
+-- New lines
+keymap("n", "<leader>o", "o<Esc>", { desc = "New line below" })
+keymap("n", "<leader>O", "O<Esc>", { desc = "New line above" })-----------------------------------------------------------------------------
 -- SCROLLING / SEARCH (keep cursor centered)
 ------------------------------------------------------------------------------
 keymap("n", "<C-d>", "<C-d>zz", { desc = "Scroll down, keep cursor centered" })
@@ -60,7 +67,7 @@ keymap("v", "p", '"_dP', { desc = "Paste without overwriting yank register" })
 -- unnamed register, so it stops overwriting your clipboard/yank
 keymap({ "n", "v" }, "d", '"_d', { desc = "Delete without yanking" })
 keymap({ "n", "v" }, "x", '"_x', { desc = "Delete char without yanking" })
-
+keymap({ "n", "v" }, "s", '"_s', { desc = "Substitute without yanking" })
 -- Explicit "cut" (old default d behavior: delete AND yank), for when
 -- you actually want to delete here and paste it somewhere else
 keymap({ "n", "v" }, "<leader>d", "d", { desc = "Cut (delete + yank)" })
