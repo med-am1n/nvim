@@ -89,7 +89,7 @@ if ok_telescope then
   keymap("n", "<leader>fh", builtin.help_tags, { desc = "Help tags" })
   keymap("n", "<leader>fr", builtin.oldfiles, { desc = "Recent files" })
 end
-
+keymap("n", "<F1>", "<cmd>Telescope keymaps<CR>", { desc = "Keymaps" })
 ------------------------------------------------------------------------------
 -- GITSIGNS
 ------------------------------------------------------------------------------
