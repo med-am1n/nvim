@@ -90,6 +90,7 @@ if ok_telescope then
   keymap("n", "<leader>fr", builtin.oldfiles, { desc = "Recent files" })
 end
 keymap("n", "<F1>", "<cmd>Telescope keymaps<CR>", { desc = "Keymaps" })
+keymap("n", "<leader>ft", "<cmd>Telescope colorscheme<CR>", { desc = "Choose colorscheme" })
 ------------------------------------------------------------------------------
 -- GITSIGNS
 ------------------------------------------------------------------------------
