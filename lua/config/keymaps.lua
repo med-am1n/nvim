@@ -68,9 +68,6 @@ keymap("v", "p", '"_dP', { desc = "Paste without overwriting yank register" })
 keymap({ "n", "v" }, "d", '"_d', { desc = "Delete without yanking" })
 keymap({ "n", "v" }, "x", '"_x', { desc = "Delete char without yanking" })
 keymap({ "n", "v" }, "s", '"_s', { desc = "Substitute without yanking" })
--- Explicit "cut" (old default d behavior: delete AND yank), for when
--- you actually want to delete here and paste it somewhere else
-keymap({ "n", "v" }, "<leader>d", "d", { desc = "Cut (delete + yank)" })
 
 ------------------------------------------------------------------------------
 -- MISC QUALITY OF LIFE
@@ -78,6 +75,17 @@ keymap({ "n", "v" }, "<leader>d", "d", { desc = "Cut (delete + yank)" })
 keymap("n", "<leader>nh", ":nohl<CR>", { desc = "Clear search highlight" })
 keymap("i", "jk", "<Esc>", { desc = "Exit insert mode" })
 
+------------------------------------------------------------------------------
+-- DIAGNOSTICS (Built-in)
+------------------------------------------------------------------------------
+-- Open diagnostic under cursor in a floating window
+keymap("n", "<leader>d", function()
+  vim.diagnostic.open_float(nil, { focusable = false })
+end, { desc = "Show line diagnostics" })
+
+-- Jump between diagnostics
+keymap("n", "[d", vim.diagnostic.goto_prev, { desc = "Previous diagnostic" })
+keymap("n", "]d", vim.diagnostic.goto_next, { desc = "Next diagnostic" })
 ------------------------------------------------------------------------------
 -- TELESCOPE
 ------------------------------------------------------------------------------
