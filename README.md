@@ -32,6 +32,6 @@ installed cleanly.
 
 ## Notes
 
-- Colorscheme: `habamax` (built-in) — change in `init.lua` if desired.
+- Colorscheme: `gruber-darker` — change in `lua/plugins/theme.lua` if desired.
 - Leader key: `<Space>`
 - See `lua/config/keymaps.lua` for all custom keybindings.

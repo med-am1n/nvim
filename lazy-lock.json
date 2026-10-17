@@ -4,6 +4,7 @@
   "catppuccin": { "branch": "main", "commit": "edefef779ab08ce1a4a404713e3012b0d202bd35" },
   "everforest": { "branch": "master", "commit": "85a86eb62409e3ec88713bff3d1b9d7374e112e4" },
   "gitsigns.nvim": { "branch": "main", "commit": "aa6cc2d7addb288cfd79a05ac257695d5ff61deb" },
+  "gruber-darker.vim": { "branch": "main", "commit": "22dbf46d8a1925b2021476761bf11d8e3e70fe5c" },
   "gruvbox.nvim": { "branch": "main", "commit": "154eb5ff5b96d0641307113fa385eaf0d36d9796" },
   "lazy.nvim": { "branch": "main", "commit": "306a05526ada86a7b30af95c5cc81ffba93fef97" },
   "lualine.nvim": { "branch": "master", "commit": "221ce6b2d999187044529f49da6554a92f740a96" },

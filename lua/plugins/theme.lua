@@ -1,5 +1,13 @@
 return {
   {
+    "ThunderBoltCODMYT/gruber-darker.vim",
+    lazy = false,
+    priority = 1000,
+    config = function()
+      vim.cmd.colorscheme("gruber-darker")
+    end,
+  },
+  {
     "catppuccin/nvim",
     name = "catppuccin",
     lazy = false,
@@ -35,9 +43,7 @@ return {
           style = "nightfox",
         },
       })
-
       vim.o.background = "dark"
-      vim.cmd.colorscheme("default")
     end,
   },
   {
