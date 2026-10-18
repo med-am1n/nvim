@@ -36,4 +36,8 @@ return {
   {
     "numToStr/Comment.nvim",
   },
+  
+  {
+    "sakhnik/nvim-gdb",
+  },
 }
