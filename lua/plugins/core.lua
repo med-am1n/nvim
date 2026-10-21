@@ -36,4 +36,16 @@ return {
   {
     "numToStr/Comment.nvim",
   },
+
+  {
+    "X3eRo0/dired.nvim",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "MunifTanjim/nui.nvim"
+    },
+    config = function()
+      require("dired").setup({})
+      vim.keymap.set("n", "<leader>fd", "<cmd>Dired<CR>", { desc = "Open Dired" })
+    end,
+  },
 }
