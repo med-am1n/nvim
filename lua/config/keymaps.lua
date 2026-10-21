@@ -78,14 +78,11 @@ keymap("i", "jk", "<Esc>", { desc = "Exit insert mode" })
 ------------------------------------------------------------------------------
 -- DIAGNOSTICS (Built-in)
 ------------------------------------------------------------------------------
--- Open diagnostic under cursor in a floating window
+-- Show all diagnostics in the quickfix window
 keymap("n", "<leader>d", function()
-  vim.diagnostic.open_float(nil, { focusable = false })
-end, { desc = "Show line diagnostics" })
-
--- Jump between diagnostics
-keymap("n", "[d", vim.diagnostic.goto_prev, { desc = "Previous diagnostic" })
-keymap("n", "]d", vim.diagnostic.goto_next, { desc = "Next diagnostic" })
+  vim.diagnostic.setqflist()
+  vim.cmd("copen")
+end, { desc = "Show All Diagnostics" })
 ------------------------------------------------------------------------------
 -- TELESCOPE
 ------------------------------------------------------------------------------
