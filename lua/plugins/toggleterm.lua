@@ -4,7 +4,7 @@ return {
   opts = {
     size = 15,
     open_mapping = [[<c-\>]], -- Ctrl+\ to toggle
-    direction = "float",      -- "float" | "horizontal" | "vertical" | "tab"
+    direction = "horizontal",      -- "float" | "horizontal" | "vertical" | "tab"
     float_opts = {
       border = "curved",
     },
