@@ -33,5 +33,5 @@ installed cleanly.
 ## Notes
 
 - Colorscheme: `gruber-darker` — change in `lua/plugins/theme.lua` if desired.
-- Leader key: `<Space>`
+- Leader key: `<\>` (backslash, Neovim default)
 - See `lua/config/keymaps.lua` for all custom keybindings.
