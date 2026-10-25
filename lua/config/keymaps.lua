@@ -15,22 +15,6 @@ keymap("n", "<C-l>", "<C-w>l", { desc = "Go to right window" })
 keymap("n", "<Tab>", "<C-w>w", {desc = "Switch between windows"})
 
 ------------------------------------------------------------------------------
--- TERMINAL
-------------------------------------------------------------------------------
--- Easier escape back to Normal mode from Terminal mode
-keymap("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
-
--- Reuse window-nav keys inside terminal buffers, same as normal splits
-keymap("t", "<C-h>", "<C-\\><C-n><C-w>h", { desc = "Go to left window" })
-keymap("t", "<C-j>", "<C-\\><C-n><C-w>j", { desc = "Go to lower window" })
-keymap("t", "<C-k>", "<C-\\><C-n><C-w>k", { desc = "Go to upper window" })
-keymap("t", "<C-l>", "<C-\\><C-n><C-w>l", { desc = "Go to right window" })
-
--- Quick built-in terminal splits (works even without toggleterm)
-keymap("n", "<leader>tt", ":terminal<CR>", { desc = "Open terminal" })
-keymap("n", "<leader>tv", ":vsplit | terminal<CR>", { desc = "Open terminal (vertical split)" })
-
-------------------------------------------------------------------------------
 -- BUFFER NAVIGATION
 ------------------------------------------------------------------------------
 keymap("n", "<S-l>", ":bnext<CR>", { desc = "Next buffer" })
