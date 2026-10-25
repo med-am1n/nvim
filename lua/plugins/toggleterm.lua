@@ -17,6 +17,6 @@ return {
     require("toggleterm").setup(opts)
 
     -- Easier escape from terminal mode back to Normal mode
-    vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
+    vim.keymap.set("t", "<Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
   end,
 }
