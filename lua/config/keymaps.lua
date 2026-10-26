@@ -14,12 +14,6 @@ keymap("n", "<C-l>", "<C-w>l", { desc = "Go to right window" })
 -- TAB
 keymap("n", "<Tab>", "<C-w>w", {desc = "Switch between windows"})
 
-------------------------------------------------------------------------------
--- BUFFER NAVIGATION
-------------------------------------------------------------------------------
-keymap("n", "<S-l>", ":bnext<CR>", { desc = "Next buffer" })
-keymap("n", "<S-h>", ":bprevious<CR>", { desc = "Previous buffer" })
-keymap("n", "<leader>bd", ":bdelete<CR>", { desc = "Delete buffer" })
 
 ------------------------------------------------------------------------------
 -- LINE MOVEMENT (visual mode)
@@ -76,19 +70,6 @@ local ok_telescope, builtin = pcall(require, "telescope.builtin")
 if ok_telescope then
   keymap("n", "<leader>ff", builtin.find_files, { desc = "Find files" })
   keymap("n", "<leader>fg", builtin.live_grep, { desc = "Grep in project" })
-  keymap("n", "<leader>fb", builtin.buffers, { desc = "Find open buffers" })
-  keymap("n", "<leader>fh", builtin.help_tags, { desc = "Help tags" })
-  keymap("n", "<leader>fr", builtin.oldfiles, { desc = "Recent files" })
 end
 keymap("n", "<F1>", "<cmd>Telescope keymaps<CR>", { desc = "Keymaps" })
 keymap("n", "<leader>ft", "<cmd>Telescope colorscheme<CR>", { desc = "Choose colorscheme" })
-------------------------------------------------------------------------------
--- GITSIGNS
-------------------------------------------------------------------------------
-local ok_gitsigns, gitsigns = pcall(require, "gitsigns")
-if ok_gitsigns then
-  keymap("n", "]c", gitsigns.next_hunk, { desc = "Next git hunk" })
-  keymap("n", "[c", gitsigns.prev_hunk, { desc = "Previous git hunk" })
-  keymap("n", "<leader>hp", gitsigns.preview_hunk, { desc = "Preview git hunk" })
-  keymap("n", "<leader>hs", gitsigns.stage_hunk, { desc = "Stage git hunk" })
-end
