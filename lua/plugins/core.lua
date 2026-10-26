@@ -48,4 +48,19 @@ return {
       vim.keymap.set("n", "<leader><leader>", "<cmd>Dired<CR>", { desc = "Open Dired" })
     end,
   },
+  {
+    "folke/snacks.nvim",
+    priority = 1000,
+    lazy = false,
+    opts = {
+      image = {
+        enabled = true,
+        doc = {
+          -- render images inside mad files automatically
+          enabled = true, 
+        },
+      },
+    },
+}
+
 }
