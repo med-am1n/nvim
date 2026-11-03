@@ -14,8 +14,14 @@ keymap("n", "<C-l>", "<C-w>l", { desc = "Go to right window" })
 -- TAB
 keymap("n", "<Tab>", "<C-w>w", {desc = "Switch between windows"})
 -- Backspace
-  -- Normal mode: Open Direu
-vim.keymap.set("n", "<BS>", "<cmd>Dired<CR>", {noremap = true, silent = true, desc = "Open Dired",})
+  -- Normal mode: Open Dired
+vim.keymap.set("n", "<BS>", function()
+  if vim.bo.filetype == "dired" then
+    vim.cmd("DiredGoUp")
+  else
+    vim.cmd("Dired")
+  end
+end, {noremap = true, silent = true, desc = "Open Dired / Go to parent directory",})
   
   -- Insert mode: Keep default Backspace behavior
 vim.keymap.set("i", "<BS>", "<BS>", {noremap = true, desc = "Delete character backward",})
