@@ -25,11 +25,6 @@ return {
   },
 
   {
-    "Saghen/blink.cmp",
-    version = "*",
-  },
-
-  {
     "lewis6991/gitsigns.nvim",
   },
 
