@@ -13,18 +13,6 @@ keymap("n", "<C-k>", "<C-w>k", { desc = "Go to upper window" })
 keymap("n", "<C-l>", "<C-w>l", { desc = "Go to right window" })
 -- TAB
 keymap("n", "<Tab>", "<C-w>w", {desc = "Switch between windows"})
--- Backspace
-  -- Normal mode: Open Dired
-vim.keymap.set("n", "<BS>", function()
-  if vim.bo.filetype == "dired" then
-    vim.cmd("DiredGoUp")
-  else
-    vim.cmd("Dired")
-  end
-end, {noremap = true, silent = true, desc = "Open Dired / Go to parent directory",})
-  
-  -- Insert mode: Keep default Backspace behavior
-vim.keymap.set("i", "<BS>", "<BS>", {noremap = true, desc = "Delete character backward",})
 
 ------------------------------------------------------------------------------
 -- LINE MOVEMENT (visual mode)
@@ -40,7 +28,9 @@ keymap("n", "<leader>l", "$", { desc = "End of line" })
 
 -- New lines
 keymap("n", "<leader>o", "o<Esc>", { desc = "New line below" })
-keymap("n", "<leader>O", "O<Esc>", { desc = "New line above" })-----------------------------------------------------------------------------
+keymap("n", "<leader>O", "O<Esc>", { desc = "New line above" })
+
+-----------------------------------------------------------------------------
 -- SCROLLING / SEARCH (keep cursor centered)
 ------------------------------------------------------------------------------
 keymap("n", "<C-d>", "<C-d>zz", { desc = "Scroll down, keep cursor centered" })
@@ -74,13 +64,4 @@ keymap("n", "<leader>d", function()
   vim.diagnostic.setqflist()
   vim.cmd("copen")
 end, { desc = "Show All Diagnostics" })
-------------------------------------------------------------------------------
--- TELESCOPE
-------------------------------------------------------------------------------
-local ok_telescope, builtin = pcall(require, "telescope.builtin")
-if ok_telescope then
-  keymap("n", "<leader>ff", builtin.find_files, { desc = "Find files" })
-  keymap("n", "<leader>fg", builtin.live_grep, { desc = "Grep in project" })
-end
-keymap("n", "<F1>", "<cmd>Telescope keymaps<CR>", { desc = "Keymaps" })
-keymap("n", "<leader>ft", "<cmd>Telescope colorscheme<CR>", { desc = "Choose colorscheme" })
+

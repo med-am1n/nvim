@@ -26,6 +26,14 @@ return {
         "<leader>fb",
         builtin.buffers
       )
+
+      vim.keymap.set("n", "<F1>", builtin.keymaps, {
+        desc = "Show keymaps",
+      })
+
+      vim.keymap.set("n", "<leader>ft", builtin.colorscheme, {
+        desc = "Choose colorscheme",
+      })
     end,
   },
 }
