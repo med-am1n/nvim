@@ -13,7 +13,12 @@ keymap("n", "<C-k>", "<C-w>k", { desc = "Go to upper window" })
 keymap("n", "<C-l>", "<C-w>l", { desc = "Go to right window" })
 -- TAB
 keymap("n", "<Tab>", "<C-w>w", {desc = "Switch between windows"})
-
+-- Backspace
+  -- Normal mode: Open Direu
+vim.keymap.set("n", "<BS>", "<cmd>Dired<CR>", {noremap = true, silent = true, desc = "Open Dired",})
+  
+  -- Insert mode: Keep default Backspace behavior
+vim.keymap.set("i", "<BS>", "<BS>", {noremap = true, desc = "Delete character backward",})
 
 ------------------------------------------------------------------------------
 -- LINE MOVEMENT (visual mode)

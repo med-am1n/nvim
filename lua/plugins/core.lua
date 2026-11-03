@@ -40,7 +40,6 @@ return {
     },
     config = function()
       require("dired").setup({})
-      vim.keymap.set("n", "<leader><leader>", "<cmd>Dired<CR>", { desc = "Open Dired" })
     end,
   },
   {
